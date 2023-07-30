@@ -33,6 +33,14 @@ void arrSwap(int i, int n, int arr[]) {
     arrSwap(i+1,n, arr);
 }
 
+bool Palindrome(string &s, int i, int n) {
+    if(i > (n/2)) {
+        return true;
+    }
+    if(s[i] != s[n-i-1]) return false;
+    return Palindrome(s,i+1, n);
+}
+
 int main() {
     //printName(0, 10);
     //sumNum(0, 4, 0);
@@ -42,4 +50,7 @@ int main() {
     for(int i = 0;i<5;i++) {
         cout << arr[i] << " ";
     }
+    cout << endl;
+    string s = "MADAMI";
+    cout << Palindrome(s,0,s.size()) << endl;
 }
